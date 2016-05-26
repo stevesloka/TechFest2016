@@ -19,7 +19,17 @@
         "containers": [
           {
             "name": "db",
-            "image": "stevesloka/k8s-mysql",
+            "image": "hypriot/rpi-mysql:5.5",
+            "env": [
+              {
+                "name": "MYSQL_ROOT_PASSWORD",
+                "value": "my-secret-pw"
+              },
+              {
+                "name": "MYSQL_DATABASE",
+                "value": "techfest16"
+              }
+            ],
             "ports": [
               {
                 "name": "mysql-server",

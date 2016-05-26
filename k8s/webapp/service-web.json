@@ -1,0 +1,25 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "web",
+    "labels": {
+      "name": "web",
+      "visualize": "true"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "name": "http",
+        "port": 80,
+        "targetPort": 80,
+        "protocol": "TCP"
+      }
+    ],
+    "selector": {
+      "name": "web"
+    },
+    "type": "NodePort"
+  }
+}

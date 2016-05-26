@@ -2,24 +2,26 @@
   "kind": "ReplicationController",
   "apiVersion": "v1",
   "metadata": {
-    "name": "api",
+    "name": "api-v1.0",
     "labels": {
-      "name": "api"
+      "name": "api",
+      "version": "1.0"
     }
   },
   "spec": {
-    "replicas": 1,
+    "replicas": 4,
     "template": {
       "metadata": {
         "labels": {
-          "name": "api"
+          "name": "api",
+          "version": "1.0"
         }
       },
       "spec": {
         "containers": [
           {
             "name": "api",
-            "image": "stevesloka/k8s-api",
+            "image": "stevesloka/api-arm:latest",
             "ports": [
               {
                 "name": "api-port",
@@ -29,7 +31,7 @@
             "env": [
               {
                 "name": "spring_datasource_url",
-                "value": "jdbc:mysql://db.sloka.svc.y78devk8s.local/demo_db"
+                "value": "jdbc:mysql://db/demo_db"
               }
             ]
           }

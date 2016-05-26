@@ -1,7 +1,7 @@
 web:
-  image: stevesloka/k8s-webapp:1.0
+  image: stevesloka/k8s-webapp:develop
   volumes:
-    - /vagrant/devopsdays/webapp/dist:/usr/share/nginx/html
+    - ./webapp/dist:/usr/share/nginx/html
   links:
     - api
   ports:
@@ -10,7 +10,7 @@ web:
     API_SERVICE_HOST: api
     API_SERVICE_PORT: 8080
 api:
-  image: stevesloka/k8s-api
+  image: stevesloka/api:develop
   ports:
     - "8080:8080"
   links:
@@ -18,4 +18,4 @@ api:
   environment:
     spring.datasource.url: jdbc:mysql://db/demo_db
 db:
-  image: stevesloka/k8s-mysql
+  image: stevesloka/db:develop

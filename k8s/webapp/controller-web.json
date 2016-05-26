@@ -4,21 +4,25 @@
   "metadata": {
     "name": "web-v1.0",
     "labels": {
-      "name": "web"
+      "name": "web",
+      "visualize": "true",
+      "uses": "web"
     }
   },
   "spec": {
     "replicas": 4,
     "selector": {
       "name": "web",
-      "version": "1.0"
+      "version": "1.0",
+      "visualize": "true"
     },
     "template": {
       "metadata": {
         "labels": {
           "name": "web",
           "uses": "web",
-          "version": "1.0"
+          "version": "1.0",
+          "visualize": "true"
         }
       },
       "spec": {
