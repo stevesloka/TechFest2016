@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM haproxy:1.5
+FROM troyfontaine/armhf-haproxy
 MAINTAINER Muhammed Uluyol <uluyol@google.com>
 
 RUN apt-get update && apt-get install -y dnsutils

@@ -1,0 +1,30 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "name": "nfs"
+  },
+  "spec": {
+    "containers": [
+      {
+        "name": "nfs",
+        "image": "luxas/nginx-test",
+        "volumeMounts": [
+          {
+            "mountPath": "/mnt/glusterfs",
+            "name": "glusterfsvol"
+          }
+        ]
+      }
+    ],
+    "volumes": [
+      {
+        "name": "glusterfsvol",
+        "nfs": {
+          "server": "192.168.2.15",
+          "path": "/vol0"
+        }
+      }
+    ]
+  }
+}
