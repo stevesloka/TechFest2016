@@ -1,5 +1,6 @@
 FROM hypriot/rpi-java:1.8.0
 
+RUN curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-ci-multi-runner/script.deb.sh | sudo bash
 RUN apt-get update -y && apt-get install gitlab-ci-multi-runner -y
 
 # Preserve runner's data
