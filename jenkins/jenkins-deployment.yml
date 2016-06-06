@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: jenkins
-        image: registry.kube-system:5000/joherma1/rpi-jenkins
+        image: joherma1/rpi-jenkins
         ports:
         - containerPort: 8080
         - containerPort: 50000
@@ -20,7 +20,7 @@ spec:
           mountPath: /var/jenkins_home
         resources:
           requests:
-            memory: "850Mi"
+            memory: "650Mi"
             cpu: "1000m"
           limits:
             memory: "850Mi"
@@ -30,4 +30,4 @@ spec:
           hostPath:
             path: /shared/jenkins
       nodeSelector:
-        app: jenkins
+        node: "07"

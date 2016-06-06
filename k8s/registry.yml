@@ -36,7 +36,9 @@ spec:
       volumes:
       - name: registry-data
         hostPath:
-          path: /shared/registry
+          path: /data/brick1/registry
+      nodeSelector:
+        node: "07"
 ---
 apiVersion: v1
 kind: Service

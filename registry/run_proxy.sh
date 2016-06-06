@@ -24,7 +24,7 @@ sed -e "s/%HOST%/$REGISTRY_HOST/g" \
 	</proxy.conf.in >/proxy.conf
 
 # wait for registry to come online
-while ! host "$REGISTRY_HOST" &>/dev/null; do
+while ! getent hosts "$REGISTRY_HOST" &>/dev/null; do
 	printf "waiting for %s to come online\n" "$REGISTRY_HOST"
 	sleep 1
 done
