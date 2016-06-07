@@ -1,0 +1,2 @@
+job:
+  script: "./gradlew clean build"
