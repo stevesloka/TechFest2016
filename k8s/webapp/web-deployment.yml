@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: web-v1.0
+  labels:
+    name: web
+    visualize: true
+spec:
+  replicas: 4
+  selector:
+    name: web
+    version: "2.0"
+    visualize: true
+    spec:
+      containers:
+      - name: api
+        image: stevesloka/web:1.0
+        ports:
+        - containerPort: 80

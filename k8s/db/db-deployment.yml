@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: db
+
+spec:
+  replicas: 1
+  selector:
+    app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - name: db
+        image: stevesloka/db
+        ports:
+        - containerPort: 3306
