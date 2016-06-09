@@ -4,10 +4,10 @@ test-webserver: test-webserver.go
 	CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-w' ./test-webserver.go
 
 container: test-webserver
-	sudo docker build -t gcr.io/google_containers/test-webserver .
+	docker build -t stevesloka/test-webserver-arm .
 
 push: container
-	gcloud docker push gcr.io/google_containers/test-webserver
+	docker push stevesloka/test-webserver-arm
 
 clean:
 	rm -f test-webserver
