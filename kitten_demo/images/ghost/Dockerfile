@@ -13,5 +13,5 @@
 # limitations under the License.
 
 FROM stevesloka/test-webserver-arm
-COPY html/nautilus.jpg image.jpg
+COPY html/ghost.jpg image.jpg
 COPY html/data.json data.json
