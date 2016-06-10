@@ -1,0 +1,24 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "kitten",
+        "labels": {
+          "visualize": "true"
+        }
+    },
+    "spec": {
+        "selector": {
+            "visualize": "true"
+        },
+        "ports": [
+            {
+               "name": "webui",
+                "protocol": "TCP",
+                "port": 80,
+                "targetPort": 80
+            }
+        ],
+        "type": "NodePort"
+    }
+}

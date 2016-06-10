@@ -13,9 +13,10 @@ spec:
       labels:
         name: update-demo
         version: kitten
+        visualize: "true"
     spec:
       containers:
-      - image: gcr.io/google_containers/update-demo:kitten
+      - image: stevesloka/update-demo:kitten
         name: update-demo
         ports:
         - containerPort: 80
